@@ -183,6 +183,7 @@ pipeline = Pipeline(
       "--timeout", "60",
       "--tries", "20",
       "--waitretry", "5",
+      "--lua-script", "urlcount.lua",
       "--warc-file", ItemInterpolation("%(item_dir)s/%(warc_file_base)s"),
       "--warc-header", "operator: Archive Team",
       "--warc-header", "posterous-dld-script-version: " + VERSION,
