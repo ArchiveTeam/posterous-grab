@@ -2,7 +2,7 @@ posterous-grab
 ==============
 
 Seesaw script for archiveteam Posterous grabbing.
-You'll find this project on the Archive Team Warrior (http://tracker.archiveteam.org/).
+You'll find this project on the Archive Team Warrior (http://tracker.archiveteam.org/posterous/).
 
 
 Running without a warrior
