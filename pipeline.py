@@ -172,7 +172,6 @@ pipeline = Pipeline(
       "-nv",
       "-o", ItemInterpolation("%(item_dir)s/wget.log"),
       "--no-check-certificate",
-      "--bind-address=",
       "--output-document", ItemInterpolation("%(item_dir)s/wget.tmp"),
       "--truncate-output",
       "-e", "robots=off",
