@@ -60,7 +60,7 @@ USER_AGENT = "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.20
 #
 # Update this each time you make a non-cosmetic change.
 # It will be added to the WARC files and reported to the tracker.
-VERSION = "20130223.01"
+VERSION = "20130224.01"
 
 
 ###########################################################################
@@ -192,7 +192,7 @@ pipeline = Pipeline(
     ],
     max_tries = 2,
     # check this: which Wget exit codes count as a success?
-    accept_on_exit_code = [ 0, 4, 6, 8 ],
+    accept_on_exit_code = [ 0, 6, 8 ],
   ),
 
   # this will set the item["stats"] string that is sent to the tracker (see below)
