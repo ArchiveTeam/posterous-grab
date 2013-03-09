@@ -60,7 +60,7 @@ USER_AGENT = "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.20
 #
 # Update this each time you make a non-cosmetic change.
 # It will be added to the WARC files and reported to the tracker.
-VERSION = "20130309.01"
+VERSION = "20130309.02"
 
 
 ###########################################################################
@@ -180,6 +180,7 @@ pipeline = Pipeline(
       "--page-requisites",
       "--span-hosts", 
       "--domains", ItemInterpolation("%(item_name)s,s3.amazonaws.com,files.posterous.com,getfile.posterous.com,getfile0.posterous.com,getfile1.posterous.com,getfile2.posterous.com,getfile3.posterous.com,getfile4.posterous.com,getfile5.posterous.com,getfile6.posterous.com,getfile7.posterous.com,getfile8.posterous.com,getfile9.posterous.com,getfile10.posterous.com"),
+      "--reject-regex", r"\.com/login",
       "--timeout", "60",
       "--tries", "20",
       "--waitretry", "5",
