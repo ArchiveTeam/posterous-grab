@@ -189,7 +189,7 @@ pipeline = Pipeline(
       "--warc-header", "operator: Archive Team",
       "--warc-header", "posterous-dld-script-version: " + VERSION,
       "--warc-header", ItemInterpolation("posterous-user: %(item_name)s"),
-      ItemInterpolation("https://%(item_name)s/")
+      ItemInterpolation("http://%(item_name)s/")
     ],
     max_tries = 2,
     # check this: which Wget exit codes count as a success?
