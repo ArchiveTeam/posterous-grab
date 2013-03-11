@@ -60,7 +60,7 @@ USER_AGENT = "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.20
 #
 # Update this each time you make a non-cosmetic change.
 # It will be added to the WARC files and reported to the tracker.
-VERSION = "20130310.01"
+VERSION = "20130311.01"
 
 
 ###########################################################################
@@ -184,7 +184,7 @@ pipeline = Pipeline(
       "--timeout", "60",
       "--tries", "20",
       "--waitretry", "5",
-      "--lua-script", "urlcount.lua",
+      "--lua-script", "posterous.lua",
       "--warc-file", ItemInterpolation("%(item_dir)s/%(warc_file_base)s"),
       "--warc-header", "operator: Archive Team",
       "--warc-header", "posterous-dld-script-version: " + VERSION,
