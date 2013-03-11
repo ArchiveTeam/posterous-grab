@@ -14,12 +14,13 @@ end
 local gateway_error_delay = -3
 
 wget.callbacks.httploop_result = function(url, err, http_stat)
-  if http_stat.statcode == 502 and string.match(url["host"], "%.posterous%.com$") then
+  code = http_stat.statcode
+  if (code == 502 or code == 503 or code == 504) and string.match(url["host"], "%.posterous%.com$") then
     -- try again
     delay = math.pow(2, math.max(0, gateway_error_delay))
 
     if gateway_error_delay >= 0 then
-      io.stdout:write("\nServer returned error 502. Waiting for "..delay.." seconds...\n")
+      io.stdout:write("\nServer returned error "..code..". Waiting for "..delay.." seconds...\n")
       io.stdout:flush()
     end
 
