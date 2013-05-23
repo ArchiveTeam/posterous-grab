@@ -36,3 +36,14 @@ wget.callbacks.httploop_result = function(url, err, http_stat)
   end
 end
 
+wget.callbacks.lookup_host = function(host)
+  if host == "s3.amazonaws.com" or host == "files.posterous.com" or string.match(host, "getfile%d*%.posterous%.com") then
+    -- use normal DNS ip
+    return nil
+  else
+    -- send requests to posterous servers
+    return "184.106.20.99"
+  end
+end
+
+
